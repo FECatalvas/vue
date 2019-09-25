@@ -15,6 +15,14 @@ export default{
         meta : {
             tokenRequired : false
         }
+    },
+    {
+        path : '/sidebar',
+        name : 'sidebar',
+        component : resolve => require(['../components/frame/Sidebar.vue'], resolve),
+        meta : {
+            tokenRequired : false
+        }
     }
 ]
 }

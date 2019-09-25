@@ -1,3 +1,4 @@
+
 <template>
 <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
@@ -8,6 +9,7 @@
       <b-navbar-nav class="ml-auto">
         <b-nav-item v-on:click="redirect('/login')">Login</b-nav-item>
         <b-nav-item v-on:click="redirect('/register')">Register</b-nav-item>
+        <b-nav-item v-on:click="redirect('/sidebar')">Sidebar</b-nav-item>
       </b-navbar-nav>
   </b-collapse>
 

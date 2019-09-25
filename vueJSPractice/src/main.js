@@ -3,6 +3,7 @@ import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'mdbvue/build/css/mdb.css';
 import router from './router';
 
 Vue.config.productionTip = false
