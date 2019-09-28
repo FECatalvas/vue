@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-  <!-- <img alt="Vue logo" src="./assets/logo.png">
-      <HelloWorld msg="Welcome to Your Vue.js App"/>  -->
 <Header></Header>
 <AppBody></AppBody>
 <Sidebar></Sidebar>
@@ -12,7 +10,7 @@
 import Header from './components/frame/Header.vue';
 import AppBody from './components/frame/Body.vue';
 import Sidebar from './components/frame/Sidebar.vue';
-
+// import  dashBoard from 'modules/basic/Dashboard.vue'
 
 export default {
   name: 'app',

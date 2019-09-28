@@ -3,9 +3,8 @@
   <b-container class="bv-example-row">
     <b-row>
       <b-col></b-col>
-      <b-card
-        title="LogIn"
-        style="box-shadow:12px 12px 2px 1px rgba(0, 0, 255, .2);border-radius:10%;margin-top:10%"
+      <b-card class="text-center" title="SIGN IN"
+        style="margin-top:10%"
       >
       <br>
         <b-form @submit="onSubmit" v-if="show">
@@ -66,3 +65,6 @@ export default {
   }
 };
 </script>
+<style>
+
+</style>

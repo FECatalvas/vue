@@ -15,8 +15,10 @@ let routes = [
         name: 'home',
         component: resolve =>require(['../modules/basic/Login.vue'],resolve),
         beforeEnter:beforeEnter
+
     }
 ]
+
 routes = routes.concat(devRoutes)
 export default{
     routes: routes

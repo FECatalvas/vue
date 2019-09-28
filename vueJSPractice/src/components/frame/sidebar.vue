@@ -1,51 +1,54 @@
 <template>
-  <div class="light-blue-skin">
-    <mdb-side-nav slim :isCollapsed="collapsed" name="Anna Deynah" :OpenedFromOutside="true" logo="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" logoRound sideNavClass="sn-bg-1" mask="strong" hidden>
-        <mdb-side-nav-nav>
-          <mdb-side-nav-cat name="Submit blog" icon="chevron-right">
-            <mdb-side-nav-item href="#" slimIcon="address-book">Submit listing</mdb-side-nav-item>
-            <mdb-side-nav-item href="#" slimIcon="address-card">Registration form</mdb-side-nav-item>
-          </mdb-side-nav-cat>
-          <mdb-side-nav-cat name="Instruction" far icon="hand-pointer">
-            <mdb-side-nav-item href="#" slimIcon="blog">For bloggers</mdb-side-nav-item>
-            <mdb-side-nav-item href="#" slimIcon="pen">For authors</mdb-side-nav-item>
-          </mdb-side-nav-cat>
-          <mdb-side-nav-cat name="About" icon="eye">
-            <mdb-side-nav-item href="#" slimIcon="handshake">Introduction</mdb-side-nav-item>
-            <mdb-side-nav-item href="#" slimIcon="tasks">Monthly meetings</mdb-side-nav-item>
-          </mdb-side-nav-cat>
-          <mdb-side-nav-cat name="Contact me" far icon="envelope">
-            <mdb-side-nav-item href="#">FAQ</mdb-side-nav-item>
-            <mdb-side-nav-item href="#" slimIcon="paper-plane" >Write a message</mdb-side-nav-item>
-          </mdb-side-nav-cat>
-          <mdb-side-nav-item icon="angle-double-left" open-icon="angle-double-right" @toggle="toggleSlim" toggler :collapsed="collapsed" fixed>Minimize</mdb-side-nav-item>
-        </mdb-side-nav-nav>
-    </mdb-side-nav>
-  </div>
+  <sidebar-menu :menu="menu" />
 </template>
-
-<script>
-  import { mdbSideNav, mdbSideNavNav, mdbSideNavCat, mdbSideNavItem, mdbRow, waves } 
-
-  export default {
-    name: 'SideNavPage',
-    components: {
-      mdbSideNav,
-      mdbSideNavNav,
-      mdbSideNavCat,
-      mdbSideNavItem,
-      mdbRow
-    },
-    data(){
-      return {
-        collapsed: false,
-      };
-    },
-    methods: {
-      toggleSlim() {
-        this.collapsed = !this.collapsed;
-      }
-    },
-    mixins: [waves]
-  };
-</script>
+ 
+ <script>
+ import AUTH from 'services/auth'
+    export default {
+        data() {
+            return {
+                auth: AUTH,
+                menu: [
+                    {
+                        header: true,
+                        title: 'Main Navigation',
+                        hiddenOnCollapse: true
+                    },
+                    {
+                        href: '/dashboard',
+                        title: 'Dashboard',
+                        icon: 'fa fa-user'
+                    },
+                    {
+                        href: '#',
+                        title: 'Personal Information',
+                        icon: 'fa fa-user'
+                    },
+                    {
+                        href: '#',
+                        title: 'Add Course & Subjects',
+                        icon: 'fa fa-chart-area',
+                        child: [
+                            {
+                                href: '/charts/sublink',
+                                title: 'Edit'
+                            }
+                        ]
+                    },
+                    {
+                        href: '/login',
+                        title: 'Log Out',
+                        icon: 'fa fa-chart-area',
+                        // AUTH.logout()
+                    
+                    }
+                ]
+            }
+        },
+        methods:{
+            // onToggleCollapse(collapsed) {},
+            // onItemClick(event, item) {}
+        }
+    }
+</script> 
+   

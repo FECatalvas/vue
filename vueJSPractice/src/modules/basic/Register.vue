@@ -3,30 +3,18 @@
     <b-row>
       <b-col></b-col>
       <b-col lg>
-        <b-card
-          title="SIGN UP"
-          style="box-shadow:12px 12px 2px 1px rgba(0, 0, 255, .2);border-radius:10%;margin-top:10%"
-        >
+        <b-card title="SIGN UP" class="text-center"
+          style="margin-top:20%">
         <br>
           <b-form @submit="onSubmit" v-if="show">
 
-            <b-form-group id="lastName">
+            <b-form-group id="Name">
               <b-form-input
-                id="userLastName"
-                v-model="form.userLastName"
-                type="text"
-                required
-                placeholder="LastName"
-              ></b-form-input>
-            </b-form-group>
-
-            <b-form-group id="firstName">
-              <b-form-input
-                id="userFirstName"
+                id="userName"
                 v-model="form.userFirstName"
                 type="text"
                 required
-                placeholder="FirstName"
+                placeholder="Name"
               ></b-form-input>
             </b-form-group>
 
@@ -36,7 +24,7 @@
                 v-model="form.userEmail"
                 type="email"
                 required
-                placeholder="Enter email"
+                placeholder="Email"
               ></b-form-input>
             </b-form-group>
 
@@ -60,7 +48,7 @@
               ></b-form-input>
             </b-form-group>
 
-            <center><b-button type="submit" variant="primary">Submit</b-button></center>
+            <center><b-button type="submit" variant="primary">Sign Up</b-button></center>
           </b-form>
         </b-card>
       </b-col>
@@ -70,6 +58,8 @@
   </b-container>
 </template>
 <script>
+import AUTH from "services/auth";
+import ROUTER from 'router'
 export default {
   data() {
     return {
@@ -83,11 +73,13 @@ export default {
       show: true
     };
   },
-  // methods: {
-  //   onSubmit(evt) {
-  //     evt.preventDefault();
-  //     console.log(JSON.stringify(this.form));
-  //   }
-  // }
+  methods: {
+    onSubmit(evt) {
+      evt.preventDefault();
+      sessionStorage.setItem("password", this.form.password)
+      AUTH.register(this.form.username, this.form.password)
+      ROUTER.push('/login')
+    }
+  }
 };
 </script>
