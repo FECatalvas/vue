@@ -23,8 +23,8 @@ export default {
             tokenRequired: true
         }
     }, {
-        path: '/dashboard',
-        name: 'dashboard',
+        path: '/sidebar',
+        name: 'sidebar',
         component: resolve => require(['components/frame/Sidebar.vue'], resolve),
         meta: {
             tokenRequired: true

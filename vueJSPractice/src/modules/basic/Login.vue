@@ -46,6 +46,8 @@
 <script>
 //eslint-disable-next-line
 /*eslint-disable*/
+import AUTH from "services/auth";
+import ROUTER from 'router'
 export default {
   data() {
     return {
@@ -61,6 +63,7 @@ export default {
     onSubmit(evt) {
       evt.preventDefault();
       console.log(JSON.stringify(this.form));
+        ROUTER.push('/dashboard')
     }
   }
 };

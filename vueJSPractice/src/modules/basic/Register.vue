@@ -8,13 +8,13 @@
         <br>
           <b-form @submit="onSubmit" v-if="show">
 
-            <b-form-group id="Name">
+            <b-form-group id="username">
               <b-form-input
                 id="userName"
                 v-model="form.userFirstName"
                 type="text"
                 required
-                placeholder="Name"
+                placeholder="Username"
               ></b-form-input>
             </b-form-group>
 
